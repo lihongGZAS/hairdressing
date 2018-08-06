@@ -1,0 +1,22 @@
+.bottom_border{
+    padding: 5px 0;
+    border-bottom: 1px solid #eee;
+}
+.row_width{
+background: white;
+}
+.choose_border{
+    border: 1px solid  #e7e7e7;
+}
+.no-border-style{
+    border: none;
+}
+.add_border{
+    border: 1px solid #e7e7e7; border-top:0px;
+}
+.title-style{
+    margin-bottom: 25px; border-top:none; border-bottom: 1px solid #e7e7e7;
+}
+.modal-backdrop.in{
+    display: none;
+}

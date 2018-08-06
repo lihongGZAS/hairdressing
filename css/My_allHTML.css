@@ -1,0 +1,178 @@
+
+#layer_hello td{
+	border: 0px;
+}
+#layer_hello td:nth-of-type(odd){
+	width: 150px;
+	text-align: right;
+	padding-right: 20px;
+}
+#layer_hello input.myipt1{
+	height: 25px;
+	border-radius: 2px;
+	border: 1px solid rgba(0,0,0,0.2);
+}
+/* 重新重置显示和隐藏按钮*/
+.ibox_tools{
+	float: right;
+	margin-right: 0px;
+}
+.ibox_tools #my_search_click{
+	padding: 5px;
+	margin-right: 10px;
+	color: rgba(0,0,0,0.6);
+}
+.ibox_tools #my_display_click{
+	padding: 5px;
+	margin-right: 10px;
+	color: rgba(0,0,0,0.6);
+}
+.ibox_tools #my_search_click:hover,#my_display_click:hover{
+	color: rgba(0,0,0,0.8);
+}
+
+/* 大表 样式开始**/
+.refresh_bnt{
+	width: auto; height: 100%;
+	float: left;
+}
+.refresh_bnt a{
+	display: block;
+	width: auto; height: 90%;
+	border-radius: 3px;
+	border:1px solid rgba(0,0,0,0);
+	float: left;
+	padding: 3px 5px;
+	text-decoration: none;
+	color: rgba(0,0,0,0.7);
+}
+.refresh_bnt a:hover{
+	background: rgba(0,0,0,0.1);
+	border:1px solid rgba(0,0,0,0.2);
+	color: rgba(0,0,0,0.9);
+}
+
+
+/*  设置表格的第一列和第二列水平居中*/
+.gradeA td:nth-of-type(1),td:nth-of-type(2){
+	text-align: center;
+}
+/*  查看详细信息框*/
+#id_container{
+	 display: none;
+	width: 100%; height: 100%;
+	float: left;
+	margin-top:100px; padding: 0;
+	background: rgba(0,0,0,0.4);
+}
+#id_container #container_in{
+	width: 700px; height: 400px;
+	background: rgba(255,255,255,0.9);
+	margin: 100px auto;
+}
+/* 大表 样式  结束**/
+
+/* 显示明细查询*/
+#show_reder_out{
+	display: none;
+	width: 100%; height: 100%;
+	background: rgba(0,0,0,0.5);
+	position: absolute;
+	top: 0px; left: 0px;
+}
+#show_reder_out .show_reder_in_min{
+	width: 600px; height: 400px;
+	min-width: 200px;
+	background: rgba(255,255,255,0.9); /*f3f3f3*/
+	border-radius: 5px;
+	box-shadow: 5px 5px 20px rgba(0,0,0,0.6);
+	margin: 10% auto;
+	position: relative;
+}
+#show_reder_out .show_reder_in_max{
+	width: 100%; height: 100%;
+	background: rgba(255,255,255,0.95); /*f3f3f3*/
+	position: relative;
+}
+.refer_top p{
+	padding-left: 10px;
+	font-weight: 600;
+	line-height: 30px;
+	color: rgba(0,0,0,0.7);
+	
+}
+.ul_icon{
+	width: auto; height: 30px;
+	list-style-type: none;
+	position: absolute;
+	top: 3px; right: 5px;
+	margin:0; padding: 0;
+}
+.ul_icon .li_icon{
+	width: 30px; height: 30px;
+	float: left;
+	
+}
+.ul_icon .li_icon i{
+	display: block;
+	width: 70%; height: 70%;
+	font-size: 14px;
+	color: rgba(0,0,0,0.7);
+	line-height: 21px; text-align: center;
+}
+.ul_icon .li_icon i:hover{
+	background: rgba(0,0,0,0.08);
+	cursor: pointer;
+}
+
+.refer_table{
+	width: calc(100% - 20px); height: calc(100% - 85px);
+	border-radius: 2px;
+	border: 1px solid rgba(0,0,0,0.2);
+	margin: 0 auto;
+}
+.refer_table table{
+	width: 100%; height: 100%;
+	background: white;
+}
+.refer_table table tr{
+	display: block;
+	width: 100%; height: 25px;
+	border-bottom: 1px solid rgba(0,0,0,0.1);
+	
+}
+.refer_table table tr:hover{
+	background: rgba(0,0,0,0.01);
+}
+.refer_table table tr td{
+	display: block;
+	float: left;
+	height: 100%
+	margin: 0; padding: 0 0 0 10px;
+	text-align: left; line-height: 25px;
+}
+.refer_table table tr td:nth-of-type(1){
+	width: 30%; min-width: 100px;	
+	border-right: 1px solid rgba(0,0,0,0.1);
+}
+.refer_table table tr td:nth-of-type(2){
+	width: 70%; min-width: 100px;
+}
+/*确认按钮*/
+button#confirm_bnt{
+	display: block;
+	background: rgba(0,0,0,0.01);
+	border-radius: 3px;
+	border: 1px solid rgba(0,0,0,0.1);
+	padding: 3px 5px;
+	float: right;
+	margin-top: 7px; margin-right: 10px;
+}
+button#confirm_bnt:hover{
+	background: rgba(0,0,0,0.08);
+}
+button#confirm_bnt i{
+	color: greenyellow;
+	-webkit-text-stroke: 1px green;
+	padding-right: 2px;
+}
