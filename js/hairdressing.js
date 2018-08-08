@@ -1,57 +1,96 @@
 "user strict"
 
+var memberName; // 会员名
+var members; // 会员卡号
+var hairdress; // 美发项目
+var hairdresser; // 美发师
+var price; // 美发价格
+var date; // 美发日期
+var memberInfo = {}; // 查询得到的会员信息对象
+
+// 日历控件
 laydate.render({
   elem: '#select_time',
-  istime: true
+  istime: true,
 });
 
 $(document).ready(function () {
-  //获取后端数据，然后绑定到table上
-  
-  
+  var nowDate = new Date();
+  var year = nowDate.getFullYear();
+  var month = nowDate.getMonth() + 1;
+  var date = nowDate.getDate();
+  if(month < 10) {
+    month = '0' + month;
+  }
+  if(date < 10) {
+    date = '0' + date;
+  }
+
+  $('#select_time').val(year + '-' + month + '-' + date);
 });
 
 // 生成美发清单
 function createOrder() {
+  if(JSON.stringify(memberInfo) !== '{}') {
+    hairdress = $('#hairdress').val();
+    hairdresser = $('#hairdresser').val();
+    price = $('#hairdressPrice').val();
+    date = $('#select_time').val();
 
-  var getData = [
-    { member: 14545433, userName: 'JJ林', hairdress: '染发', hairdresser: '小龙',price: 64, date: '2018-08-07' }
-  ];
+    var tbodyHtml = '';
+    tbodyHtml += '<tr><td>' + members + '</td>' +
+      '<td>' + memberName + '</td>' +
+      '<td>' + hairdress + '</td>' +
+      '<td>' + hairdresser + '</td>' +
+      '<td>' + price + '</td>' +
+      '<td>' + date + '</td></tr>';
 
-
-  var tbodyHtml = '';
-  for (var i = 0; i < getData.length; i++) {
-    tbodyHtml += '<tr><td>' + getData[i].member + '</td>' +
-      '<td>' + getData[i].userName + '</td>' +
-      '<td>' + getData[i].hairdress + '</td>' +
-      '<td>' + getData[i].hairdresser + '</td>' +
-      '<td>' + getData[i].price + '</td>' +
-      '<td>' + getData[i].date + '</td></tr>';
+    $('.dataTables-example').append(tbodyHtml);
+    $('.dataTables-example').dataTable();
+  } else {
+    alert('请先获取会员信息');
   }
-
-  $('.dataTables-example').append(tbodyHtml);
-  $('.dataTables-example').dataTable();
-  console.log(3434)
 }
 
+// 根据会员卡号查询会员信息
 function searchUserInfor() {
-  console.log(9999);
-  
-  $.ajax({
-    type: 'GET',
-    url: '192.168.1.156:8080/hello/test',
-    success: function (data) {
-      console.log(data);
-      $('#addCustomerDiv').remove(); // 添加前先把前一个元素移除，避免多次查询添加多个div
-      var html = '';
-      html += '<div class="row form-group col-sm-12" id="addCustomerDiv" style="height: 60px;line-height:60px;border:1px solid #7a7a7a;">' +
-        '<label class="col-sm-1 control-label">会员姓名：</label></div>';
-      $('#searchMember').after(html);
-    },
-    error: function (err) {
-      alert(err.statusText);
-    }
-  });
+
+  // 查询返回的会员信息数据
+  memberInfo = {members: 8975766841, memberName: 'jack', money: 100};
+  members = memberInfo.members;
+  memberName = memberInfo.memberName;
+
+  // 添加前先把前一个元素移除，避免多次查询添加多个div
+  $('#addCustomerDiv').remove(); 
+  $('.dataTables-example').children('tbody').remove();
+  var memberHtml = '';
+  memberHtml += '<div class="row form-group col-sm-12" id="addCustomerDiv" style="height: 60px;line-height:60px;border-bottom:1px solid #7a7a7a;">' +
+    '<label class="col-sm-2 control-label">会员卡号：' + memberInfo.members + '</label>' + 
+    '<label class="col-sm-2 control-label">会员姓名：' + memberInfo.memberName + '</label>' + 
+    '<label class="col-sm-2 control-label">卡上余额：￥' + memberInfo.money + '</label>' + '</div>';
+  $('#searchMember').after(memberHtml);
+
+  // $.ajax({
+  //   type: 'GET',
+  //   url: '192.168.1.156:8080/hello/test',
+  //   success: function (data) {
+  //     console.log(data);
+  //     var memberInfo = {members: 8975766841, memberName: 'jack', money: 100}; // 暂时模拟的后台数据
+  //     members = memberInfo.members;
+  //     memberName = memberInfo.memberName;
+
+  //     $('#addCustomerDiv').remove(); // 添加前先把前一个元素移除，避免多次查询添加多个div
+  //     var html = '';
+  //     html += '<div class="row form-group col-sm-12" id="addCustomerDiv" style="height: 60px;line-height:60px;border-bottom:1px solid #7a7a7a;">' +
+  //       '<label class="col-sm-2 control-label">会员卡号：' + members + '</label>' + 
+  //       '<label class="col-sm-2 control-label">会员姓名：' + memberName + '</label>' + 
+  //       '<label class="col-sm-2 control-label">卡上余额：' + money + '￥</label>' + '</div>';
+  //     $('#searchMember').after(html);
+  //   },
+  //   error: function (err) {
+  //     alert(err.statusText);
+  //   }
+  // });
 
   
 }

@@ -33,47 +33,59 @@
               </a>
             </div>
           </div>
-          
+
           <div class="ibox-content">
             <div class="example-wrap">
               <div class="example">
-                  <form class="form-horizontal" role="form" id="searh-conditions">
-                      <div class="row form-group col-sm-12" id="searchMember">
-                          <label for="Number" class="col-sm-1 control-label">会员号：</label>
-                          <div class="col-sm-4">
-                              <input type="text" class="form-control" id="Number" placeholder="请输入会员卡号">
-                          </div>
-                          <a onclick="searchUserInfor();" href="javascript:void(0);" class="btn btn-primary">查询&nbsp;
-                              <i class="fa fa-search"></i>
-                            </a>
-                      </div>
-                      <div class="row form-group col-sm-12">
-                          <label for="hairdress" class="col-sm-1 control-label">美发项目</label>
-                          <div class="col-sm-2">
-                              <select class="form-control" id="hairdress">
-                                  <option>洗发</option>
-                                  <option>剪发</option>
-                                  <option>烫发</option>
-                                  <option>染发</option>
-                              </select>
-                          </div>
-                          <label for="hairdresser" class="col-sm-1 control-label">美发师</label>
-                          <div class="col-sm-2">
-                              <select class="form-control" id="hairdresser">
-                                  <option>小哥哥1</option>
-                                  <option>小哥哥2</option>
-                                  <option>小哥哥3</option>
-                                  <option>小哥哥4</option>
-                              </select>
-                          </div>
-                          <label for="select_time" class="col-sm-1 control-label">日期</label>
-                          <div class="col-sm-2">
-                              <input type="text" class="form-control layer-date" id="select_time">
-                          </div>
-                          <button type="button" class="btn btn-primary" onclick="createOrder()">确定</button>
-                      </div>
-                  </form>
-                  
+                <form class="form-horizontal" role="form" id="searh-conditions">
+                  <div class="row form-group col-sm-12" id="searchMember">
+                    <label for="Number" class="col-sm-1 control-label">会员号：</label>
+                    <div class="col-sm-4">
+                      <input type="text" class="form-control" id="members" placeholder="请输入会员卡号">
+                    </div>
+                    <a onclick="searchUserInfor();" href="javascript:void(0);" class="btn btn-primary">查询&nbsp;
+                      <i class="fa fa-search"></i>
+                    </a>
+                  </div>
+                  <div class="row form-group col-sm-12">
+                    <label for="hairdress" class="col-sm-1 control-label">美发项目</label>
+                    <div class="col-sm-2">
+                      <select class="form-control" id="hairdress">
+                        <option>洗发</option>
+                        <option>剪发</option>
+                        <option>烫发</option>
+                        <option>染发</option>
+                      </select>
+                    </div>
+                    <label for="hairdresser" class="col-sm-1 control-label">美发师</label>
+                    <div class="col-sm-2">
+                      <select class="form-control" id="hairdresser">
+                        <option>小哥哥1</option>
+                        <option>小哥哥2</option>
+                        <option>小哥哥3</option>
+                        <option>小哥哥4</option>
+                      </select>
+                    </div>
+                    <label for="hairdressPrice" class="col-sm-1 control-label">价格</label>
+                    <div class="col-sm-2">
+                      <select class="form-control" id="hairdressPrice">
+                        <option>20</option>
+                        <option>40</option>
+                        <option>60</option>
+                        <option>128</option>
+                        <option>188</option>
+                      </select>
+                    </div>
+                    <label for="select_time" class="col-sm-1 control-label">日期</label>
+                    <div class="col-sm-2">
+                      <input type="text" class="form-control layer-date" id="select_time" placeholder="">
+                    </div>
+                  </div>
+                  <div class="col-sm-12">
+                    <button type="button" class="btn btn-primary" onclick="createOrder()">生成清单</button>
+                  </div>
+                </form>
+
                 <table class="table bootstrap-table table-striped table-bordered table-hover dataTables-example">
                   <thead>
                     <tr>

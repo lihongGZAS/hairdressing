@@ -1,12 +1,321 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>员工统计</title>
+  <title>会员信息管理</title>
+  <link rel="shortcut icon" href="favicon.ico">
+  <link href="../css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
+  <link href="../css/font-awesome.css?v=4.4.0" rel="stylesheet">
+
+  <!-- Data Tables -->
+  <link href="../css/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet">
+  <link href="../css/plugins/bootstrap-table/bootstrap-table.min.css" rel="stylesheet">
+
+  <link href="../css/animate.css" rel="stylesheet">
+  <link href="../css/style.css?v=4.1.0" rel="stylesheet">
+  <script src="http://common.cnblogs.com/script/jquery.js" type="text/javascript"></script>
 </head>
-<body>
-  
+
+<body class="gray-bg">
+  <div class="modal inmodal in" id="myModal_add" tabindex="-1" role="dialog" aria-hidden="true" style="display: none; padding-right: 6px;"
+    data-backdrop="static">
+    <div class="modal-dialog">
+      <div class="modal-content animated fadeIn">
+        <div>
+          <span style="padding-left: 20px;font-size: 20px;">会员管理-新增</span>
+          <button type="button" class="close" data-dismiss="modal" style="padding-right: 10px;padding-top: 4px;">
+            <span aria-hidden="true">×</span>
+            <span class="sr-only">Close</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <table class="table table-bordered table-hover">
+            <tbody>
+              <tr>
+                <td>用户名</td>
+                <td>
+                  <input type="text">
+                </td>
+              </tr>
+              <tr>
+                <td>手机号码</td>
+                <td>
+                  <input type="text">
+                </td>
+              </tr>
+              <tr>
+                <td>会员卡号</td>
+                <td>
+                  <input type="text">
+                </td>
+              </tr>
+              <tr>
+                <td>备注</td>
+                <td>
+                  <textarea name="" id="" cols="30" rows="10"></textarea>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-white" data-dismiss="modal">关闭</button>
+          <button type="button" class="btn btn-primary" data-dismiss="modal">保存</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 删除内容模态框 -->
+  <div class="modal inmodal in" id="myModal_delete" tabindex="-1" role="dialog" aria-hidden="true" style="display: none; padding-right: 6px;"
+    data-backdrop="static">
+    <div class="modal-dialog">
+      <div class="modal-content animated fadeIn">
+        <div>
+          <span style="padding-left: 20px;font-size: 20px;">会员管理-删除</span>
+          <button type="button" class="close" data-dismiss="modal" style="padding-right: 10px;padding-top: 4px;">
+            <span aria-hidden="true">×</span>
+            <span class="sr-only">Close</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>请先勾选数据，再进行删除操作</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-white" data-dismiss="modal">确定</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 删除内容模态框2 -->
+  <div class="modal inmodal in" id="myModal_delete2" tabindex="-1" role="dialog" aria-hidden="true" style="display: none; padding-right: 6px;"
+    data-backdrop="static">
+    <div class="modal-dialog">
+      <div class="modal-content animated fadeIn">
+        <div>
+          <span style="padding-left: 20px;font-size: 20px;">会员管理-删除</span>
+          <button type="button" class="close" data-dismiss="modal" style="padding-right: 10px;padding-top: 4px;">
+            <span aria-hidden="true">×</span>
+            <span class="sr-only">Close</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>是否删除该用户信息</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-white" data-dismiss="modal">确定</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 编辑内容模态框 -->
+  <div class="modal inmodal in" id="myModal_pencil1" tabindex="-1" role="dialog" aria-hidden="true" style="display: none; padding-right: 6px;"
+    data-backdrop="static">
+    <div class="modal-dialog">
+      <div class="modal-content animated fadeIn">
+        <div>
+          <span style="padding-left: 20px;font-size: 20px;">会员管理-编辑</span>
+          <button type="button" class="close" data-dismiss="modal" style="padding-right: 10px;padding-top: 4px;">
+            <span aria-hidden="true">×</span>
+            <span class="sr-only">Close</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>请勾选一条编辑信息，再进行编辑操作</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-white" data-dismiss="modal">确定</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 编辑内容模态框 -->
+  <div class="modal inmodal in" id="myModal_pencil2" tabindex="-1" role="dialog" aria-hidden="true" style="display: none; padding-right: 6px;"
+    data-backdrop="static">
+    <div class="modal-dialog">
+      <div class="modal-content animated fadeIn">
+        <div>
+          <span style="padding-left: 20px;font-size: 20px;">会员管理-编辑</span>
+          <button type="button" class="close" data-dismiss="modal" style="padding-right: 10px;padding-top: 4px;">
+            <span aria-hidden="true">×</span>
+            <span class="sr-only">Close</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <table class="table table-bordered table-hover">
+            <tbody>
+              <tr>
+                <td>用户姓名</td>
+                <td>
+                  <input type="text">
+                </td>
+              </tr>
+              <tr>
+                <td>手机号码</td>
+                <td>
+                  <input type="text">
+                </td>
+              </tr>
+              <tr>
+                <td>会员卡号</td>
+                <td>
+                  <input type="text">
+                </td>
+              </tr>
+              <tr>
+                <td>备注</td>
+                <td>
+                  <textarea name="" id="" cols="30" rows="10"></textarea>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-white" data-dismiss="modal">保存</button>
+          <button type="button" class="btn btn-primary" data-dismiss="modal">取消</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 导出内容模态框 -->
+  <div class="modal inmodal in" id="myModal_export" tabindex="-1" role="dialog" aria-hidden="true" style="display: none; padding-right: 6px;"
+    data-backdrop="static">
+    <div class="modal-dialog">
+      <div class="modal-content animated fadeIn">
+        <div>
+          <span style="padding-left: 20px;font-size: 20px;">导出</span>
+          <button type="button" class="close" data-dismiss="modal" style="padding-right: 10px;padding-top: 4px;">
+            <span aria-hidden="true">×</span>
+            <span class="sr-only">Close</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>确认导出查询信息吗？</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">确定</button>
+          <button type="button" class="btn btn-white" data-dismiss="modal">取消</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="ibox float-e-margins">
+          <div class="ibox-title">
+            <h5>查询条件</h5>
+            <div class="ibox-tools">
+              <a class="collapse-link">
+                <i class="fa fa-chevron-up"></i>
+              </a>
+            </div>
+          </div>
+          <div class="ibox-content">
+            <div class="example-wrap">
+              <div class="example">
+                <table class="table bootstrap-table table-striped table-bordered table-hover dataTables-example">
+                  <thead>
+                    <tr>
+                      <th>员工编号</th>
+                      <th>姓名</th>
+                      <th>性别</th>
+                      <th>电话</th>
+                      <th>美发项目</th>
+                      <th>提成</th>
+                      <th>日期</th>
+                    </tr>
+                  </thead>
+                  <tbody></tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 全局js -->
+  <script src="../js/jquery.min.js?v=2.1.4"></script>
+  <script src="../js/bootstrap.min.js?v=3.3.6"></script>
+  <script src="../js/plugins/jeditable/jquery.jeditable.js"></script>
+
+  <!-- Data Tables -->
+  <script src="../js/plugins/dataTables/jquery.dataTables.js"></script>
+  <script src="../js/plugins/dataTables/dataTables.bootstrap.js"></script>
+
+  <!-- 自定义js -->
+  <script src="../js/content.js?v=1.0.0"></script>
+  <!-- Page-Level Scripts -->
+  <script>
+    $(document).ready(function () {
+      //获取后端数据，然后绑定到table上
+      var getData = [
+        { staffNum: 14545433, staffName: 'JJ林', sexuality: '男', phoneNum: '13578645523', hairdressing: '理发', commission: 20, date: '2018-08-08'},
+        { staffNum: 14545435, staffName: '周杰伦', sexuality: '男', phoneNum: '13578645523',hairdressing: '染发', commission: 120, date: '2018-08-09' },
+        { staffNum: 14545437, staffName: '王杰', sexuality: '男', phoneNum: '13578645523',hairdressing: '洗发', commission: 20, date: '2018-08-18'},
+        { staffNum: 14545439, staffName: '费玉清', sexuality: '男', phoneNum: '13578645523',hairdressing: '烫发', commission: 20, date: '2018-08-28' },
+        { staffNum: 14545433, staffName: 'JJ林', sexuality: '男', phoneNum: '13578645523',hairdressing: '理发', commission: 20, date: '2018-08-16' },
+        { staffNum: 14545435, staffName: '周杰伦', sexuality: '男', phoneNum: '13578645523',hairdressing: '烫发', commission: 20, date: '2018-08-18' },
+        { staffNum: 14545437, staffName: '王杰', sexuality: '男', phoneNum: '13578645523',hairdressing: '洗发', commission: 20, date: '2018-08-23' },
+        { staffNum: 14545439, staffName: '费玉清', sexuality: '男', phoneNum: '13578645523',hairdressing: '理发', commission: 20, date: '2018-08-12' },
+        { staffNum: 14545433, staffName: 'JJ林', sexuality: '男', phoneNum: '13578645523',hairdressing: '洗发', commission: 20, date: '2018-08-26' },
+        { staffNum: 14545435, staffName: '周杰伦', sexuality: '男', phoneNum: '13578645523',hairdressing: '烫发', commission: 20, date: '2018-08-25' },
+        { staffNum: 14545437, staffName: '王杰', sexuality: '男', phoneNum: '13578645523',hairdressing: '染发', commission: 20, date: '2018-08-27' },
+        { staffNum: 14545439, staffName: '费玉清', sexuality: '男', phoneNum: '13578645523',hairdressing: '理发', commission: 20, date: '2018-10-03' },
+        { staffNum: 14545433, staffName: 'JJ林', sexuality: '男', phoneNum: '13578645523',hairdressing: '理发', commission: 20, date: '2018-08-06' },
+        { staffNum: 14545435, staffName: '周杰伦', sexuality: '男', phoneNum: '13578645523',hairdressing: '理发', commission: 20, date: '2018-08-01' },
+        { staffNum: 14545437, staffName: '王杰', sexuality: '男', phoneNum: '13578645523',hairdressing: '洗发', commission: 20, date: '2018-08-12' },
+        { staffNum: 14545439, staffName: '费玉清', sexuality: '男', phoneNum: '13578645523',hairdressing: '烫发', commission: 20, date: '2018-08-19' },
+        { staffNum: 14545433, staffName: 'JJ林', sexuality: '男', phoneNum: '13578645523',hairdressing: '染发', commission: 20, date: '2018-08-20' },
+        { staffNum: 14545435, staffName: '周杰伦', sexuality: '男', phoneNum: '13578645523',hairdressing: '染发', commission: 20, date: '2018-08-11' },
+        { staffNum: 14545437, staffName: '王杰', sexuality: '男', phoneNum: '13578645523',hairdressing: '烫发', commission: 20, date: '2018-08-16' },
+        { staffNum: 14545439, staffName: '费玉清', sexuality: '男', phoneNum: '13578645523',hairdressing: '理发', commission: 20, date: '2018-08-17' }
+      ];
+
+
+      var tbodyHtml = '';
+      for (var i = 0; i < getData.length; i++) {
+        tbodyHtml += '<tr><td>' + getData[i].staffNum + '</td>' +
+          '<td>' + getData[i].staffName + '</td>' +
+          '<td>' + getData[i].sexuality + '</td>' +
+          '<td>' + getData[i].phoneNum + '</td>' + 
+          '<td>' + getData[i].hairdressing + '</td>' + 
+          '<td>' + getData[i].commission + '</td>' +
+          '<td>' + getData[i].date + '</td></tr>';
+      }
+
+      $('.dataTables-example').append(tbodyHtml);
+      $('.dataTables-example').dataTable();
+    });
+
+    function fnClickAddRow() {
+      $.ajax({
+        type: 'GET',
+        url: '192.168.1.156:8080/hello/test',
+        success: function (data) {
+          console.log(data);
+        },
+        error: function (err) {
+          console.log(err);
+        }
+      });
+    }
+  </script>
+
+  <script type="text/javascript" src="http://tajs.qq.com/stats?sId=9051096" charset="UTF-8"></script>
+  <!-- Bootstrap table -->
+  <script src="../js/plugins/bootstrap-table/bootstrap-table.min.js"></script>
+  <script src="../js/plugins/bootstrap-table/bootstrap-table-mobile.min.js"></script>
+  <script src="../js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
+
+  <!-- Peity -->
+  <script src="../js/demo/bootstrap-table-demo.js"></script>
+  <!--统计代码，可删除-->
+
 </body>
+
 </html>
