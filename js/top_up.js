@@ -2,10 +2,6 @@
 
 var memberName; // 会员名
 var members; // 会员卡号
-var hairdress; // 美发项目
-var hairdresser; // 美发师
-var price; // 美发价格
-var date; // 美发日期
 var memberInfo = {}; // 查询得到的会员信息对象
 
 // 日历控件
@@ -26,11 +22,11 @@ $(document).ready(function () {
     date = '0' + date;
   }
 
-  $('#select_time').val(year + '-' + month + '-' + date);
+  $('#top_up_time').val(year + '-' + month + '-' + date);
 });
 
 // 生成美发清单
-function createOrder() {
+function sureTopUp() {
   if(JSON.stringify(memberInfo) !== '{}') {
     hairdress = $('#hairdress').val();
     hairdresser = $('#hairdresser').val();
