@@ -40,17 +40,17 @@
                 <form class="form-horizontal" role="form" id="searh-conditions">
                   <div class="row form-group col-sm-12" id="searchMember">
                     <label for="Number" class="col-sm-1 control-label">会员卡号</label>
-                    <div class="col-sm-4">
+                    <div class="col-sm-2">
                       <input type="text" class="form-control" id="members" placeholder="请输入会员卡号">
                     </div>
                     <a onclick="searchUserInfor();" href="javascript:void(0);" class="btn btn-primary">查询&nbsp;
                       <i class="fa fa-search"></i>
                     </a>
                   </div>
-                  <div class="row form-group col-sm-12">
-                    <label for="hairdress" class="col-sm-1 control-label">充值金额</label>
+                  <div class="row form-group col-sm-12" style="border-bottom:1px solid gray;padding: 40px 0 40px 0;">
+                    <label for="topUpValue" class="col-sm-1 control-label">充值金额</label>
                     <div class="col-sm-2">
-                      <select class="form-control" id="hairdress">
+                      <select class="form-control" id="topUpValue">
                         <option>50</option>
                         <option>100</option>
                         <option>200</option>
@@ -70,10 +70,8 @@
                     <tr>
                       <th>会员卡号</th>
                       <th>会员姓名</th>
-                      <th>美发项目</th>
-                      <th>美发师</th>
-                      <th>价格（￥）</th>
-                      <th>日期</th>
+                      <th>充值金额</th>
+                      <th>充值日期</th>
                     </tr>
                   </thead>
                   <tbody></tbody>

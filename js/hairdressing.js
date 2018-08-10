@@ -36,6 +36,7 @@ function createOrder() {
     hairdresser = $('#hairdresser').val();
     price = $('#hairdressPrice').val();
     date = $('#select_time').val();
+    $('.dataTables-example').children('tbody').remove(); // 移除tbody标签，每次都只生成一条充值记录
 
     var tbodyHtml = '';
     tbodyHtml += '<tr><td>' + members + '</td>' +

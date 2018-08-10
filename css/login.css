@@ -95,5 +95,6 @@ body.signin {
 .login-box {
     border: 2px solid #e7e1e1;
     border-radius: 10px;
+    box-shadow: 1px 1px 1px #ccc;
     margin-top: 200px;
 }

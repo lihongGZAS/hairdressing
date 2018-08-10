@@ -24,162 +24,142 @@ $(function() {
     {
       member: 14545433,
       userName: "JJ林",
-      hairdresser: 'Jack',
-      hairdressing: '烫发',
-      consumption: 20,
-      date: "2018-08-08"
+      sex: '男',
+      phoneNum: '13578906755',
+      consumption: 300
     },
     {
       member: 14545435,
       userName: "周杰伦",
-      hairdresser: 'Jack',
-      hairdressing: '染发',
-      consumption: 120,
-      date: "2018-08-09"
+      sex: '男',
+      phoneNum: '13578906755',
+      consumption: 460
     },
     {
       member: 14545437,
       userName: "王杰",
-      hairdresser: 'Lucy',
-      hairdressing: '理发',
-      consumption: 20,
-      date: "2018-08-18"
+      sex: '男',
+      phoneNum: '13578906755',
+      consumption: 120
     },
     {
       member: 14545439,
       userName: "费玉清",
-      hairdresser: 'John',
-      hairdressing: '理发',
-      consumption: 20,
-      date: "2018-08-28"
+      sex: '男',
+      phoneNum: '13578906755',
+      consumption: 1640
     },
     {
       member: 14545433,
       userName: "JJ林",
-      hairdresser: 'Jack',
-      hairdressing: '理发',
-      consumption: 20,
-      date: "2018-08-16"
+      sex: '男',
+      phoneNum: '13578906755',
+      consumption: 60
     },
     {
       member: 14545435,
       userName: "周杰伦",
-      hairdresser: 'Jack',
-      hairdressing: '理发',
-      consumption: 20,
-      date: "2018-08-18"
+      sex: '男',
+      phoneNum: '13578906755',
+      consumption: 20
     },
     {
       member: 14545437,
       userName: "王杰",
-      hairdresser: 'Jack',
-      hairdressing: '理发',
-      consumption: 20,
-      date: "2018-08-23"
+      sex: '男',
+      phoneNum: '13578906755',
+      consumption: 120
     },
     {
       member: 14545439,
       userName: "费玉清",
-      hairdresser: 'Jack',
-      hairdressing: '理发',
-      consumption: 20,
-      date: "2018-08-12"
+      sex: '男',
+      phoneNum: '13578906755',
+      consumption: 180
     },
     {
       member: 14545433,
       userName: "JJ林",
-      hairdresser: 'Jack',
-      hairdressing: '理发',
-      consumption: 20,
-      date: "2018-08-26"
+      sex: '男',
+      phoneNum: '13578906755',
+      consumption: 120
     },
     {
       member: 14545435,
       userName: "周杰伦",
-      hairdresser: 'Jack',
-      hairdressing: '理发',
-      consumption: 20,
-      date: "2018-08-25"
+      sex: '男',
+      phoneNum: '13578906755',
+      consumption: 140
     },
     {
       member: 14545437,
       userName: "王杰",
-      hairdresser: 'Jack',
-      hairdressing: '理发',
-      consumption: 20,
-      date: "2018-08-27"
+      sex: '男',
+      phoneNum: '13578906755',
+      consumption: 160
     },
     {
       member: 14545439,
       userName: "费玉清",
-      hairdresser: 'Jack',
-      hairdressing: '理发',
-      consumption: 20,
-      date: "2018-10-03"
+      sex: '男',
+      phoneNum: '13578906755',
+      consumption: 1280
     },
     {
       member: 14545433,
       userName: "JJ林",
-      hairdresser: 'John',
-      hairdressing: '理发',
-      consumption: 20,
-      date: "2018-08-06"
+      sex: '男',
+      phoneNum: '13578906755',
+      consumption: 1200
     },
     {
       member: 14545435,
       userName: "周杰伦",
-      hairdresser: 'Bob',
-      hairdressing: '理发',
-      consumption: 20,
-      date: "2018-08-01"
+      sex: '男',
+      phoneNum: '13578906755',
+      consumption: 180
     },
     {
       member: 14545437,
       userName: "王杰",
-      hairdresser: 'Lucy',
-      hairdressing: '理发',
-      consumption: 20,
-      date: "2018-08-12"
+      sex: '男',
+      phoneNum: '13578906755',
+      consumption: 260
     },
     {
       member: 14545439,
       userName: "费玉清",
-      hairdresser: 'Jack',
-      hairdressing: '理发',
-      consumption: 20,
-      date: "2018-08-19"
+      sex: '男',
+      phoneNum: '13578906755',
+      consumption: 1780
     },
     {
       member: 14545433,
       userName: "JJ林",
-      hairdresser: 'Jack',
-      hairdressing: '烫发',
-      consumption: 20,
-      date: "2018-08-20"
+      sex: '男',
+      phoneNum: '13578906755',
+      consumption: 1240
     },
     {
       member: 14545435,
       userName: "周杰伦",
-      hairdresser: 'Mary',
-      hairdressing: '理发',
-      consumption: 20,
-      date: "2018-08-11"
+      sex: '男',
+      phoneNum: '13578906755',
+      consumption: 1400
     },
     {
       member: 14545437,
       userName: "王杰",
-      hairdresser: 'Jack',
-      hairdressing: '染发',
-      consumption: 120,
-      date: "2018-08-16"
+      sex: '男',
+      phoneNum: '13578906755',
+      consumption: 1240
     },
     {
       member: 14545439,
       userName: "费玉清",
-      hairdresser: 'Jack',
-      hairdressing: '理发',
-      consumption: 20,
-      date: "2018-08-17"
+      sex: '男',
+      phoneNum: '13578906755',
+      consumption: 1240
     }
   ];
 
@@ -187,10 +167,9 @@ $(function() {
   for (var i = 0; i < getData.length; i++) {
     tbodyHtml += "<tr><td>" + getData[i].member + "</td>" +
       "<td>" + getData[i].userName + "</td>" +
-      "<td>" + getData[i].hairdresser + "</td>" +
-      "<td>" + getData[i].hairdressing + "</td>" +
-      "<td>" + getData[i].consumption + "</td>" +
-      "<td>" + getData[i].date + "</td></tr>";
+      "<td>" + getData[i].sex + "</td>" +
+      "<td>" + getData[i].phoneNum + "</td>" +
+      "<td>" + getData[i].consumption + "</td></tr>";
   }
 
   $(".dataTables-example").append(tbodyHtml);

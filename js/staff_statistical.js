@@ -21,26 +21,26 @@ $(function() {
 
   // 获取后端数据，然后绑定到table上
   staffData = [
-    { staffNum: 14545433, staffName: 'JJ林', sexuality: '男', phoneNum: '13578645523', hairdressing: '理发', commission: 20, date: '2018-08-08'},
-    { staffNum: 14545435, staffName: '周杰伦', sexuality: '男', phoneNum: '13578645523',hairdressing: '染发', commission: 120, date: '2018-08-09' },
-    { staffNum: 14545437, staffName: '王杰', sexuality: '男', phoneNum: '13578645523',hairdressing: '洗发', commission: 20, date: '2018-08-18'},
-    { staffNum: 14545439, staffName: '费玉清', sexuality: '男', phoneNum: '13578645523',hairdressing: '烫发', commission: 20, date: '2018-08-28' },
-    { staffNum: 14545433, staffName: 'JJ林', sexuality: '男', phoneNum: '13578645523',hairdressing: '理发', commission: 20, date: '2018-08-16' },
-    { staffNum: 14545435, staffName: '周杰伦', sexuality: '男', phoneNum: '13578645523',hairdressing: '烫发', commission: 20, date: '2018-08-18' },
-    { staffNum: 14545437, staffName: '王杰', sexuality: '男', phoneNum: '13578645523',hairdressing: '洗发', commission: 20, date: '2018-08-23' },
-    { staffNum: 14545439, staffName: '费玉清', sexuality: '男', phoneNum: '13578645523',hairdressing: '理发', commission: 20, date: '2018-08-12' },
-    { staffNum: 14545433, staffName: 'JJ林', sexuality: '男', phoneNum: '13578645523',hairdressing: '洗发', commission: 20, date: '2018-08-26' },
-    { staffNum: 14545435, staffName: '周杰伦', sexuality: '男', phoneNum: '13578645523',hairdressing: '烫发', commission: 20, date: '2018-08-25' },
-    { staffNum: 14545437, staffName: '王杰', sexuality: '男', phoneNum: '13578645523',hairdressing: '染发', commission: 20, date: '2018-08-27' },
-    { staffNum: 14545439, staffName: '费玉清', sexuality: '男', phoneNum: '13578645523',hairdressing: '理发', commission: 20, date: '2018-10-03' },
-    { staffNum: 14545433, staffName: 'JJ林', sexuality: '男', phoneNum: '13578645523',hairdressing: '理发', commission: 20, date: '2018-08-06' },
-    { staffNum: 14545435, staffName: '周杰伦', sexuality: '男', phoneNum: '13578645523',hairdressing: '理发', commission: 20, date: '2018-08-01' },
-    { staffNum: 14545437, staffName: '王杰', sexuality: '男', phoneNum: '13578645523',hairdressing: '洗发', commission: 20, date: '2018-08-12' },
-    { staffNum: 14545439, staffName: '费玉清', sexuality: '男', phoneNum: '13578645523',hairdressing: '烫发', commission: 20, date: '2018-08-19' },
-    { staffNum: 14545433, staffName: 'JJ林', sexuality: '男', phoneNum: '13578645523',hairdressing: '染发', commission: 20, date: '2018-08-20' },
-    { staffNum: 14545435, staffName: '周杰伦', sexuality: '男', phoneNum: '13578645523',hairdressing: '染发', commission: 20, date: '2018-08-11' },
-    { staffNum: 14545437, staffName: '王杰', sexuality: '男', phoneNum: '13578645523',hairdressing: '烫发', commission: 20, date: '2018-08-16' },
-    { staffNum: 14545439, staffName: '费玉清', sexuality: '男', phoneNum: '13578645523',hairdressing: '理发', commission: 20, date: '2018-08-17' }
+    { staffNum: 14545433, staffName: 'JJ林', sexuality: '男', phoneNum: '13578645523', commission: 200},
+    { staffNum: 14545435, staffName: '周杰伦', sexuality: '男', phoneNum: '13578645523', commission: 120},
+    { staffNum: 14545437, staffName: '王杰', sexuality: '男', phoneNum: '13578645523', commission: 260},
+    { staffNum: 14545439, staffName: '费玉清', sexuality: '男', phoneNum: '13578645523', commission: 20},
+    { staffNum: 14545433, staffName: 'JJ林', sexuality: '男', phoneNum: '13578645523', commission: 20},
+    { staffNum: 14545435, staffName: '周杰伦', sexuality: '男', phoneNum: '13578645523', commission: 20},
+    { staffNum: 14545437, staffName: '王杰', sexuality: '男', phoneNum: '13578645523', commission: 520},
+    { staffNum: 14545439, staffName: '费玉清', sexuality: '男', phoneNum: '13578645523', commission: 620},
+    { staffNum: 14545433, staffName: 'JJ林', sexuality: '男', phoneNum: '13578645523', commission: 320},
+    { staffNum: 14545435, staffName: '周杰伦', sexuality: '男', phoneNum: '13578645523', commission: 820},
+    { staffNum: 14545437, staffName: '王杰', sexuality: '男', phoneNum: '13578645523', commission:1020},
+    { staffNum: 14545439, staffName: '费玉清', sexuality: '男', phoneNum: '13578645523', commission: 920},
+    { staffNum: 14545433, staffName: 'JJ林', sexuality: '男', phoneNum: '13578645523', commission: 420},
+    { staffNum: 14545435, staffName: '周杰伦', sexuality: '男', phoneNum: '13578645523', commission: 620},
+    { staffNum: 14545437, staffName: '王杰', sexuality: '男', phoneNum: '13578645523', commission: 320},
+    { staffNum: 14545439, staffName: '费玉清', sexuality: '男', phoneNum: '13578645523', commission: 220},
+    { staffNum: 14545433, staffName: 'JJ林', sexuality: '男', phoneNum: '13578645523', commission: 120},
+    { staffNum: 14545435, staffName: '周杰伦', sexuality: '男', phoneNum: '13578645523', commission: 720},
+    { staffNum: 14545437, staffName: '王杰', sexuality: '男', phoneNum: '13578645523', commission: 820},
+    { staffNum: 14545439, staffName: '费玉清', sexuality: '男', phoneNum: '13578645523', commission: 820}
   ];
 
   var tbodyHtml = '';
@@ -49,9 +49,7 @@ $(function() {
       '<td>' + staffData[i].staffName + '</td>' +
       '<td>' + staffData[i].sexuality + '</td>' +
       '<td>' + staffData[i].phoneNum + '</td>' + 
-      '<td>' + staffData[i].hairdressing + '</td>' + 
-      '<td>' + staffData[i].commission + '</td>' +
-      '<td>' + staffData[i].date + '</td></tr>';
+      '<td>' + staffData[i].commission + '</td></tr>';
   }
 
   $(".dataTables-example").append(tbodyHtml);

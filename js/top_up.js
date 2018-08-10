@@ -6,7 +6,7 @@ var memberInfo = {}; // 查询得到的会员信息对象
 
 // 日历控件
 laydate.render({
-  elem: '#select_time',
+  elem: '#top_up_time',
   istime: true,
 });
 
@@ -28,18 +28,15 @@ $(document).ready(function () {
 // 生成美发清单
 function sureTopUp() {
   if(JSON.stringify(memberInfo) !== '{}') {
-    hairdress = $('#hairdress').val();
-    hairdresser = $('#hairdresser').val();
-    price = $('#hairdressPrice').val();
-    date = $('#select_time').val();
+    topUpValue = $('#topUpValue').val();
+    topUpDate = $('#top_up_time').val();
+    $('.dataTables-example').children('tbody').remove(); // 移除tbody标签，每次都只生成一条充值记录
 
     var tbodyHtml = '';
     tbodyHtml += '<tr><td>' + members + '</td>' +
       '<td>' + memberName + '</td>' +
-      '<td>' + hairdresser + '</td>' +
-      '<td>' + hairdress + '</td>' +
-      '<td>' + price + '</td>' +
-      '<td>' + date + '</td></tr>';
+      '<td>' + topUpValue + '</td>' +
+      '<td>' + topUpDate + '</td></tr>';
 
     $('.dataTables-example').append(tbodyHtml);
     $('.dataTables-example').dataTable();
@@ -72,16 +69,23 @@ function searchUserInfor() {
   //   success: function (data) {
   //     console.log(data);
   //     var memberInfo = {members: 8975766841, memberName: 'jack', money: 100}; // 暂时模拟的后台数据
-  //     members = memberInfo.members;
-  //     memberName = memberInfo.memberName;
+  //     if(JSON.stringify(memberInfo) !== '{}') {
+  //       members = memberInfo.members;
+  //       memberName = memberInfo.memberName;
 
-  //     $('#addCustomerDiv').remove(); // 添加前先把前一个元素移除，避免多次查询添加多个div
-  //     var html = '';
-  //     html += '<div class="row form-group col-sm-12" id="addCustomerDiv" style="height: 60px;line-height:60px;border-bottom:1px solid #7a7a7a;">' +
-  //       '<label class="col-sm-2 control-label">会员卡号：' + members + '</label>' + 
-  //       '<label class="col-sm-2 control-label">会员姓名：' + memberName + '</label>' + 
-  //       '<label class="col-sm-2 control-label">卡上余额：' + money + '￥</label>' + '</div>';
-  //     $('#searchMember').after(html);
+  //       $('#addCustomerDiv').remove(); // 添加前先把前一个元素移除，避免多次查询添加多个div
+  //       var html = '';
+  //       html += '<div class="row form-group col-sm-12" id="addCustomerDiv" style="height: 60px;line-height:60px;border-bottom:1px solid #7a7a7a;">' +
+  //         '<label class="col-sm-2 control-label">会员卡号：' + members + '</label>' + 
+  //         '<label class="col-sm-2 control-label">会员姓名：' + memberName + '</label>' + 
+  //         '<label class="col-sm-2 control-label">卡上余额：' + money + '￥</label>' + '</div>';
+  //       $('#searchMember').after(html);
+  //     } else {
+  //       $('#addCustomerDiv').remove(); // 添加前先把前一个元素移除，避免多次查询添加多个div
+  //       var html = '<div class="row form-group clo-sm-12" style="height:60px;line-height:60px;border-bottom: 1px solid #7a7a7a;">' + 
+  //         '<label>该会员不存在!</label></div>'; 
+  //       $('#searchMember').after(html);
+  //     }
   //   },
   //   error: function (err) {
   //     alert(err.statusText);
