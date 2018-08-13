@@ -1,4 +1,4 @@
-'user strict';
+'use strict';
 
 var staffData; // 员工近期服务记录数据
 

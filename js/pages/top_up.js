@@ -1,4 +1,4 @@
-"user strict"
+"use strict"
 
 var memberName; // 会员名
 var members; // 会员卡号

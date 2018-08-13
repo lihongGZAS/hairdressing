@@ -1,4 +1,4 @@
-'user strict';
+'use strict';
 
 var customerData; // 客户消费记录数据
 

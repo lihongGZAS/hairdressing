@@ -264,110 +264,13 @@
 
   <!-- 自定义js -->
   <script src="../js/content.js?v=1.0.0"></script>
-  <!-- Page-Level Scripts -->
-  <script>
-    $(document).ready(function () {
-
-      function fnClickAddRow() {
-        $.ajax({
-          type: 'GET',
-          url: '192.168.1.156:8080/hello/test',
-          success: function (data) {
-            console.log(data);
-          },
-          error: function (err) {
-            console.log(err);
-          }
-        });
-      }
-
-      //获取后端数据，然后绑定到table上
-      var getData = [
-        { member: 14545433, userName: 'JJ林', sexuality: '男', phoneNum: '13578645523', hairderssing: '理发'},
-        { member: 14545435, userName: '周杰伦', sexuality: '男', phoneNum: '13578645523' ,hairderssing: '染发'},
-        { member: 14545437, userName: '王杰', sexuality: '男', phoneNum: '13578645523' ,hairderssing: '理发'},
-        { member: 14545439, userName: '费玉清', sexuality: '男', phoneNum: '13578645523' ,hairderssing: '理发'},
-        { member: 14545433, userName: 'JJ林', sexuality: '男', phoneNum: '13578645523' ,hairderssing: '理发'},
-        { member: 14545435, userName: '周杰伦', sexuality: '男', phoneNum: '13578645523' ,hairderssing: '理发'},
-        { member: 14545437, userName: '王杰', sexuality: '男', phoneNum: '13578645523' ,hairderssing: '理发'},
-        { member: 14545439, userName: '费玉清', sexuality: '男', phoneNum: '13578645523' ,hairderssing: '理发'},
-        { member: 14545433, userName: 'JJ林', sexuality: '男', phoneNum: '13578645523' ,hairderssing: '理发'},
-        { member: 14545435, userName: '周杰伦', sexuality: '男', phoneNum: '13578645523' ,hairderssing: '理发'},
-        { member: 14545437, userName: '王杰', sexuality: '男', phoneNum: '13578645523' ,hairderssing: '理发'},
-        { member: 14545439, userName: '费玉清', sexuality: '男', phoneNum: '13578645523' ,hairderssing: '理发'},
-        { member: 14545433, userName: 'JJ林', sexuality: '男', phoneNum: '13578645523' ,hairderssing: '理发'},
-        { member: 14545435, userName: '周杰伦', sexuality: '男', phoneNum: '13578645523' ,hairderssing: '理发'},
-        { member: 14545437, userName: '王杰', sexuality: '男', phoneNum: '13578645523' ,hairderssing: '理发'},
-        { member: 14545439, userName: '费玉清', sexuality: '男', phoneNum: '13578645523' ,hairderssing: '理发'},
-        { member: 14545433, userName: 'JJ林', sexuality: '男', phoneNum: '13578645523' ,hairderssing: '理发'},
-        { member: 14545435, userName: '周杰伦', sexuality: '男', phoneNum: '13578645523' ,hairderssing: '理发'},
-        { member: 14545437, userName: '王杰', sexuality: '男', phoneNum: '13578645523' ,hairderssing: '烫发'},
-        { member: 14545439, userName: '费玉清', sexuality: '男', phoneNum: '13578645523' ,hairderssing: '理发'},
-      ];
-
-
-      var tbodyHtml = '';
-      for (var i = 0; i < getData.length; i++) {
-        tbodyHtml += '<tr><th><input type="checkbox" class="test"><td>' + getData[i].member + '</td>' +
-          '<td>' + getData[i].userName + '</td>' +
-          '<td>' + getData[i].sexuality + '</td>' +
-          '<td>' + getData[i].phoneNum + '</td>' +
-          '<td>' + getData[i].hairderssing + '</td></tr>';
-      }
-
-      $('.dataTables-example').append(tbodyHtml);
-      $('.dataTables-example').dataTable();
-    });
-
-    function addUserInfor() {
-      console.log('添加用户信息');
-    }
-
-    // 删除用户信息
-    function deleteUserInfro(event) {
-      var checkList = $('input.test');
-      var checkAry = [];
-      for (var i = 0; i < checkList.length; i++) {
-        if (checkList[i].checked) {
-          checkAry.push(i + 1);
-        }
-      }
-      if (checkAry.length > 0) {
-        // 根据勾选情况动态显示不同的模态框
-        $(event)[0].dataset.target = '#myModal_delete2';
-      } else {
-        $(event)[0].dataset.target = '#myModal_delete';
-      }
-    }
-
-    // 编辑功能
-    function compile(event) {
-      var checkList = $('input.test');
-      var checkAry = [];
-      for (var i = 0; i < checkList.length; i++) {
-        if (checkList[i].checked) {
-          checkAry.push(i + 1);
-        }
-      }
-      if (checkAry.length > 0) {
-        // 根据勾选情况动态显示不同的模态框
-        $(event)[0].dataset.target = '#myModal_pencil2';
-      } else {
-        $(event)[0].dataset.target = '#myModal_pencil1';
-      }
-    }
-
-  </script>
+  <script src="../js/pages/staff_management.js"></script>
 
   <script type="text/javascript" src="http://tajs.qq.com/stats?sId=9051096" charset="UTF-8"></script>
   <!-- Bootstrap table -->
   <script src="../js/plugins/bootstrap-table/bootstrap-table.min.js"></script>
   <script src="../js/plugins/bootstrap-table/bootstrap-table-mobile.min.js"></script>
   <script src="../js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
-
-  <!-- Peity -->
-  <script src="../js/demo/bootstrap-table-demo.js"></script>
-  <!--统计代码，可删除-->
 
 </body>
 
