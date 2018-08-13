@@ -3,6 +3,8 @@
 var memberName; // 会员名
 var members; // 会员卡号
 var memberInfo = {}; // 查询得到的会员信息对象
+var topUpValue; // 充值金额
+var topUpDate; // 充值日期
 
 // 日历控件
 laydate.render({
@@ -25,7 +27,7 @@ $(document).ready(function () {
   $('#top_up_time').val(year + '-' + month + '-' + date);
 });
 
-// 生成美发清单
+// 生成充值记录
 function sureTopUp() {
   if(JSON.stringify(memberInfo) !== '{}') {
     topUpValue = $('#topUpValue').val();
