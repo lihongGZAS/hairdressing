@@ -40,6 +40,12 @@
                 </td>
               </tr>
               <tr>
+                  <td>性别</td>
+                  <td>
+                    <input type="text">
+                  </td>
+                </tr>
+              <tr>
                 <td>手机号码</td>
                 <td>
                   <input type="text">
@@ -83,7 +89,7 @@
           <p>请先勾选数据，再进行删除操作</p>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-white" data-dismiss="modal">确定</button>
+          <button type="button" class="btn btn-primary" data-dismiss="modal">确定</button>
         </div>
       </div>
     </div>
@@ -104,7 +110,8 @@
           <p>是否删除该用户信息</p>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-white" data-dismiss="modal">确定</button>
+          <button type="button" class="btn btn-white" data-dismiss="modal">取消</button>
+          <button type="button" class="btn btn-primary" data-dismiss="modal">确定</button>
         </div>
       </div>
     </div>
@@ -125,7 +132,7 @@
           <p>请勾选一条编辑信息，再进行编辑操作</p>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-white" data-dismiss="modal">确定</button>
+          <button type="button" class="btn btn-primary" data-dismiss="modal">确定</button>
         </div>
       </div>
     </div>
@@ -152,6 +159,12 @@
                 </td>
               </tr>
               <tr>
+                  <td>性别</td>
+                  <td>
+                    <input type="text">
+                  </td>
+                </tr>
+              <tr>
                 <td>手机号码</td>
                 <td>
                   <input type="text">
@@ -173,30 +186,51 @@
           </table>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-white" data-dismiss="modal">保存</button>
-          <button type="button" class="btn btn-primary" data-dismiss="modal">取消</button>
+          <button type="button" class="btn btn-white" data-dismiss="modal">取消</button>
+          <button type="button" class="btn btn-primary" data-dismiss="modal">保存</button>
         </div>
       </div>
     </div>
   </div>
-  <!-- 导出内容模态框 -->
-  <div class="modal inmodal in" id="myModal_export" tabindex="-1" role="dialog" aria-hidden="true" style="display: none; padding-right: 6px;"
+  <!-- 导出内容模态框1 -->
+  <div class="modal inmodal in" id="myModal_export1" tabindex="-1" role="dialog" aria-hidden="true" style="display: none; padding-right: 6px;"
     data-backdrop="static">
     <div class="modal-dialog">
       <div class="modal-content animated fadeIn">
         <div>
-          <span style="padding-left: 20px;font-size: 20px;">导出</span>
+          <span style="padding-left: 20px;font-size: 20px;">会员管理-导出</span>
           <button type="button" class="close" data-dismiss="modal" style="padding-right: 10px;padding-top: 4px;">
             <span aria-hidden="true">×</span>
             <span class="sr-only">Close</span>
           </button>
         </div>
         <div class="modal-body">
-          <p>确认导出查询信息吗？</p>
+          <p>请勾选出您需要导出的客户！</p>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-primary" data-dismiss="modal">确定</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 导出内容模态框2 -->
+  <div class="modal inmodal in" id="myModal_export2" tabindex="-1" role="dialog" aria-hidden="true" style="display: none; padding-right: 6px;"
+    data-backdrop="static">
+    <div class="modal-dialog">
+      <div class="modal-content animated fadeIn">
+        <div>
+          <span style="padding-left: 20px;font-size: 20px;">会员管理-导出</span>
+          <button type="button" class="close" data-dismiss="modal" style="padding-right: 10px;padding-top: 4px;">
+            <span aria-hidden="true">×</span>
+            <span class="sr-only">Close</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>请确认要导出的客户信息</p>
+        </div>
+        <div class="modal-footer">
           <button type="button" class="btn btn-white" data-dismiss="modal">取消</button>
+          <button type="button" class="btn btn-primary" data-dismiss="modal">确定</button>
         </div>
       </div>
     </div>
@@ -217,16 +251,16 @@
             <div class="example-wrap">
               <div class="example">
                 <div class="">
-                  <a onclick="addUserInfor();" href="javascript:void(0);" class="btn btn-primary" data-toggle="modal" data-target="#myModal_add">新增&nbsp;
+                  <a onclick="addUserInfo()" href="#" class="btn btn-primary" data-toggle="modal" data-target="#myModal_add">新增&nbsp;
                     <i class="fa fa-plus"></i>
                   </a>
-                  <a onclick="deleteUserInfro(this);" href="javascript:void(0);" class="btn btn-primary" data-toggle="modal" data-target="">删除&nbsp;
+                  <a onclick="deleteUserInfo(this)" href="#" class="btn btn-primary" data-toggle="modal" data-target="">删除&nbsp;
                     <i class="fa fa-trash"></i>
                   </a>
-                  <a onclick="compile(this);" href="javascript:void(0);" class="btn btn-primary" data-toggle="modal" data-target="">编辑&nbsp;
+                  <a onclick="compile(this)" href="#" class="btn btn-primary" data-toggle="modal" data-target="">编辑&nbsp;
                     <i class="fa fa-pencil"></i>
                   </a>
-                  <a onclick="fnClickAddRow();" href="javascript:void(0);" class="btn btn-primary" data-toggle="modal" data-target="#myModal_export">导出&nbsp;
+                  <a onclick="exportUserInfo(this)" href="#" class="btn btn-primary" data-toggle="modal" data-target="">导出&nbsp;
                     <i class="fa fa-print"></i>
                   </a>
                 </div>

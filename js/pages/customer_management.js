@@ -54,12 +54,12 @@ $(document).ready(function () {
   $('.dataTables-example').dataTable();
 });
 
-function addUserInfor() {
+function addUserInfo() {
   console.log('添加用户信息');
 }
 
 // 删除用户信息
-function deleteUserInfro(event) {
+function deleteUserInfo(event) {
   var checkList = $('input.test');
   var checkAry = [];
   for (var i = 0; i < checkList.length; i++) {
@@ -67,8 +67,8 @@ function deleteUserInfro(event) {
       checkAry.push(i + 1);
     }
   }
+  // 根据勾选情况动态显示不同的模态框
   if (checkAry.length > 0) {
-    // 根据勾选情况动态显示不同的模态框
     $(event)[0].dataset.target = '#myModal_delete2';
   } else {
     $(event)[0].dataset.target = '#myModal_delete';
@@ -84,10 +84,30 @@ function compile(event) {
       checkAry.push(i + 1);
     }
   }
+  // 根据勾选情况动态显示不同的模态框
   if (checkAry.length > 0) {
-    // 根据勾选情况动态显示不同的模态框
     $(event)[0].dataset.target = '#myModal_pencil2';
   } else {
     $(event)[0].dataset.target = '#myModal_pencil1';
+  }
+}
+
+// 导出客户信息到Excel表
+function exportUserInfo(event) {
+  
+  var checkList = $('input.test');
+  var checkAry = [];
+  for (var i = 0; i < checkList.length; i++) {
+    if (checkList[i].checked) {
+      checkAry.push(i + 1);
+    }
+  }
+  console.log(checkAry);
+  // 根据勾选情况动态显示不同的模态框
+  if (checkAry.length > 0) {
+    $(event)[0].dataset.target = '#myModal_export2';
+    console.log('导出客户信息到Excel');
+  } else {
+    $(event)[0].dataset.target = '#myModal_export1';
   }
 }
