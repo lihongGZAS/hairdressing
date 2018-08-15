@@ -19,7 +19,7 @@
 </head>
 
 <body class="gray-bg">
-  <div class="modal inmodal in" id="myModal_add" tabindex="-1" role="dialog" aria-hidden="true" style="display: none; padding-right: 6px;"
+  <div class="modal inmodal in" id="staff_Modal_add" tabindex="-1" role="dialog" aria-hidden="true" style="display: none; padding-right: 6px;"
     data-backdrop="static">
     <div class="modal-dialog">
       <div class="modal-content animated fadeIn">
@@ -34,19 +34,31 @@
           <table class="table table-bordered table-hover">
             <tbody>
               <tr>
-                <td>用户名</td>
+                <td>美发师编号</td>
                 <td>
                   <input type="text">
                 </td>
               </tr>
               <tr>
-                <td>手机号码</td>
+                <td>姓名</td>
                 <td>
                   <input type="text">
                 </td>
               </tr>
               <tr>
-                <td>员工号</td>
+                <td>性别</td>
+                <td>
+                  <input type="text">
+                </td>
+              </tr>
+              <tr>
+                <td>电话</td>
+                <td>
+                  <input type="text">
+                </td>
+              </tr>
+              <tr>
+                <td>美发项目</td>
                 <td>
                   <input type="text">
                 </td>
@@ -68,7 +80,7 @@
     </div>
   </div>
   <!-- 删除内容模态框 -->
-  <div class="modal inmodal in" id="myModal_delete" tabindex="-1" role="dialog" aria-hidden="true" style="display: none; padding-right: 6px;"
+  <div class="modal inmodal in" id="staff_Modal_delete" tabindex="-1" role="dialog" aria-hidden="true" style="display: none; padding-right: 6px;"
     data-backdrop="static">
     <div class="modal-dialog">
       <div class="modal-content animated fadeIn">
@@ -83,13 +95,13 @@
           <p>请先勾选数据，再进行删除操作</p>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-white" data-dismiss="modal">确定</button>
+          <button type="button" class="btn btn-primary" data-dismiss="modal">确定</button>
         </div>
       </div>
     </div>
   </div>
   <!-- 删除内容模态框2 -->
-  <div class="modal inmodal in" id="myModal_delete2" tabindex="-1" role="dialog" aria-hidden="true" style="display: none; padding-right: 6px;"
+  <div class="modal inmodal in" id="staff_Modal_delete2" tabindex="-1" role="dialog" aria-hidden="true" style="display: none; padding-right: 6px;"
     data-backdrop="static">
     <div class="modal-dialog">
       <div class="modal-content animated fadeIn">
@@ -104,13 +116,14 @@
           <p>是否删除该用户信息</p>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-white" data-dismiss="modal">确定</button>
+          <button type="button" class="btn btn-white" data-dismiss="modal">取消</button>
+          <button type="button" class="btn btn-primary" data-dismiss="modal">确定</button>
         </div>
       </div>
     </div>
   </div>
   <!-- 编辑内容模态框 -->
-  <div class="modal inmodal in" id="myModal_pencil1" tabindex="-1" role="dialog" aria-hidden="true" style="display: none; padding-right: 6px;"
+  <div class="modal inmodal in" id="staff_Modal_pencil1" tabindex="-1" role="dialog" aria-hidden="true" style="display: none; padding-right: 6px;"
     data-backdrop="static">
     <div class="modal-dialog">
       <div class="modal-content animated fadeIn">
@@ -125,13 +138,13 @@
           <p>请勾选一条编辑信息，再进行编辑操作</p>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-white" data-dismiss="modal">确定</button>
+          <button type="button" class="btn btn-primary" data-dismiss="modal">确定</button>
         </div>
       </div>
     </div>
   </div>
   <!-- 编辑内容模态框 -->
-  <div class="modal inmodal in" id="myModal_pencil2" tabindex="-1" role="dialog" aria-hidden="true" style="display: none; padding-right: 6px;"
+  <div class="modal inmodal in" id="staff_Modal_pencil2" tabindex="-1" role="dialog" aria-hidden="true" style="display: none; padding-right: 6px;"
     data-backdrop="static">
     <div class="modal-dialog">
       <div class="modal-content animated fadeIn">
@@ -146,19 +159,31 @@
           <table class="table table-bordered table-hover">
             <tbody>
               <tr>
-                <td>员工姓名</td>
+                <td>美发师编号</td>
                 <td>
                   <input type="text">
                 </td>
               </tr>
               <tr>
-                <td>手机号码</td>
+                <td>姓名</td>
                 <td>
                   <input type="text">
                 </td>
               </tr>
               <tr>
-                <td>员工号</td>
+                <td>性别</td>
+                <td>
+                  <input type="text">
+                </td>
+              </tr>
+              <tr>
+                <td>电话</td>
+                <td>
+                  <input type="text">
+                </td>
+              </tr>
+              <tr>
+                <td>美发项目</td>
                 <td>
                   <input type="text">
                 </td>
@@ -173,19 +198,40 @@
           </table>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-white" data-dismiss="modal">保存</button>
-          <button type="button" class="btn btn-primary" data-dismiss="modal">取消</button>
+          <button type="button" class="btn btn-white" data-dismiss="modal">取消</button>
+          <button type="button" class="btn btn-primary" data-dismiss="modal">保存</button>
         </div>
       </div>
     </div>
   </div>
-  <!-- 导出内容模态框 -->
-  <div class="modal inmodal in" id="myModal_export" tabindex="-1" role="dialog" aria-hidden="true" style="display: none; padding-right: 6px;"
+  <!-- 导出内容模态框1 -->
+  <div class="modal inmodal in" id="staff_Modal_export1" tabindex="-1" role="dialog" aria-hidden="true" style="display: none; padding-right: 6px;"
     data-backdrop="static">
     <div class="modal-dialog">
       <div class="modal-content animated fadeIn">
         <div>
-          <span style="padding-left: 20px;font-size: 20px;">导出</span>
+          <span style="padding-left: 20px;font-size: 20px;">员工管理-导出</span>
+          <button type="button" class="close" data-dismiss="modal" style="padding-right: 10px;padding-top: 4px;">
+            <span aria-hidden="true">×</span>
+            <span class="sr-only">Close</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>请先勾选需要导出的员工信息</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">确定</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 导出内容模态框2 -->
+  <div class="modal inmodal in" id="staff_Modal_export2" tabindex="-1" role="dialog" aria-hidden="true" style="display: none; padding-right: 6px;"
+    data-backdrop="static">
+    <div class="modal-dialog">
+      <div class="modal-content animated fadeIn">
+        <div>
+          <span style="padding-left: 20px;font-size: 20px;">员工管理-导出</span>
           <button type="button" class="close" data-dismiss="modal" style="padding-right: 10px;padding-top: 4px;">
             <span aria-hidden="true">×</span>
             <span class="sr-only">Close</span>
@@ -195,8 +241,8 @@
           <p>确认导出查询信息吗？</p>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-primary" data-dismiss="modal">确定</button>
           <button type="button" class="btn btn-white" data-dismiss="modal">取消</button>
+          <button type="button" class="btn btn-primary" data-dismiss="modal">确定</button>
         </div>
       </div>
     </div>
@@ -217,16 +263,16 @@
             <div class="example-wrap">
               <div class="example">
                 <div class="">
-                  <a onclick="addUserInfor();" href="javascript:void(0);" class="btn btn-primary" data-toggle="modal" data-target="#myModal_add">新增&nbsp;
+                  <a onclick="addStaffInfo()" href="javascript:void(0)" class="btn btn-primary" data-toggle="modal" data-target="#staff_Modal_add">新增&nbsp;
                     <i class="fa fa-plus"></i>
                   </a>
-                  <a onclick="deleteUserInfro(this);" href="javascript:void(0);" class="btn btn-primary" data-toggle="modal" data-target="">删除&nbsp;
+                  <a onclick="deleteStaffInfo(this)" href="javascript:void(0)" class="btn btn-primary" data-toggle="modal" data-target="">删除&nbsp;
                     <i class="fa fa-trash"></i>
                   </a>
-                  <a onclick="compile(this);" href="javascript:void(0);" class="btn btn-primary" data-toggle="modal" data-target="">编辑&nbsp;
+                  <a onclick="compile(this)" href="javascript:void(0)" class="btn btn-primary" data-toggle="modal" data-target="">编辑&nbsp;
                     <i class="fa fa-pencil"></i>
                   </a>
-                  <a onclick="fnClickAddRow();" href="javascript:void(0);" class="btn btn-primary" data-toggle="modal" data-target="#myModal_export">导出&nbsp;
+                  <a onclick="exportStaffInfo(this)" href="javascript:void(0)" class="btn btn-primary" data-toggle="modal" data-target="">导出&nbsp;
                     <i class="fa fa-print"></i>
                   </a>
                 </div>
@@ -262,16 +308,14 @@
   <script src="../js/plugins/dataTables/jquery.dataTables.js"></script>
   <script src="../js/plugins/dataTables/dataTables.bootstrap.js"></script>
 
-  <!-- 自定义js -->
-  <script src="../js/content.js?v=1.0.0"></script>
-  <script src="../js/pages/staff_management.js"></script>
-
   <script type="text/javascript" src="http://tajs.qq.com/stats?sId=9051096" charset="UTF-8"></script>
   <!-- Bootstrap table -->
   <script src="../js/plugins/bootstrap-table/bootstrap-table.min.js"></script>
   <script src="../js/plugins/bootstrap-table/bootstrap-table-mobile.min.js"></script>
   <script src="../js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
-
+  <!-- 自定义js -->
+  <script src="../js/content.js?v=1.0.0"></script>
+  <script src="../js/pages/staff_management.js"></script>
 </body>
 
 </html>

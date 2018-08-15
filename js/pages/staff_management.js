@@ -2,7 +2,8 @@
 
 var staffData; // 员工信息数据数组
 
-function fnClickAddRow() {
+// 页面加载时发送数据请求
+function getStaffData() {
   $.ajax({
     type: 'GET',
     url: '192.168.1.156:8080/hello/test',
@@ -55,12 +56,13 @@ $(document).ready(function () {
   $('.dataTables-example').dataTable();
 });
 
-function addUserInfor() {
-  console.log('添加用户信息');
+// 新增员工信息
+function addStaffInfo() {
+  console.log('添加新员工信息');
 }
 
-// 删除用户信息
-function deleteUserInfro(event) {
+// 删除员工信息
+function deleteStaffInfo(event) {
   var checkList = $('input.test');
   var checkAry = [];
   for (var i = 0; i < checkList.length; i++) {
@@ -68,15 +70,15 @@ function deleteUserInfro(event) {
       checkAry.push(i + 1);
     }
   }
+  // 根据勾选情况动态显示不同的模态框
   if (checkAry.length > 0) {
-    // 根据勾选情况动态显示不同的模态框
-    $(event)[0].dataset.target = '#myModal_delete2';
+    $(event)[0].dataset.target = '#staff_Modal_delete2';
   } else {
-    $(event)[0].dataset.target = '#myModal_delete';
+    $(event)[0].dataset.target = '#staff_Modal_delete';
   }
 }
 
-// 编辑功能
+// 编辑员工基本信息
 function compile(event) {
   var checkList = $('input.test');
   var checkAry = [];
@@ -85,10 +87,28 @@ function compile(event) {
       checkAry.push(i + 1);
     }
   }
+  // 根据勾选情况动态显示不同的模态框
   if (checkAry.length > 0) {
-    // 根据勾选情况动态显示不同的模态框
-    $(event)[0].dataset.target = '#myModal_pencil2';
+    $(event)[0].dataset.target = '#staff_Modal_pencil2';
   } else {
-    $(event)[0].dataset.target = '#myModal_pencil1';
+    $(event)[0].dataset.target = '#staff_Modal_pencil1';
+  }
+}
+
+// 导出美发师信息
+function exportStaffInfo(event) {
+  console.log(666);
+  var checkList = $('input.test');
+  var checkAry = [];
+  for (var i = 0; i < checkList.length; i++) {
+    if (checkList[i].checked) {
+      checkAry.push(i + 1);
+    }
+  }
+  // 根据勾选情况动态显示不同的模态框
+  if (checkAry.length > 0) {
+    $(event)[0].dataset.target = '#staff_Modal_export2';
+  } else {
+    $(event)[0].dataset.target = '#staff_Modal_export1';
   }
 }
