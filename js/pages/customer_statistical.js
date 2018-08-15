@@ -26,140 +26,160 @@ $(function() {
       userName: "JJ林",
       sex: '男',
       phoneNum: '13578906755',
-      consumption: 300
+      consumption: 300,
+      integral: 30
     },
     {
       member: 14545435,
       userName: "周杰伦",
       sex: '男',
       phoneNum: '13578906755',
-      consumption: 460
+      consumption: 460,
+      integral: 46
     },
     {
       member: 14545437,
       userName: "王杰",
       sex: '男',
       phoneNum: '13578906755',
-      consumption: 120
+      consumption: 120,
+      integral: 12
     },
     {
       member: 14545439,
       userName: "费玉清",
       sex: '男',
       phoneNum: '13578906755',
-      consumption: 1640
+      consumption: 1640,
+      integral: 164
     },
     {
       member: 14545433,
       userName: "JJ林",
       sex: '男',
       phoneNum: '13578906755',
-      consumption: 60
+      consumption: 60,
+      integral: 6
     },
     {
       member: 14545435,
       userName: "周杰伦",
       sex: '男',
       phoneNum: '13578906755',
-      consumption: 20
+      consumption: 20,
+      integral: 2
     },
     {
       member: 14545437,
       userName: "王杰",
       sex: '男',
       phoneNum: '13578906755',
-      consumption: 120
+      consumption: 120,
+      integral: 12
     },
     {
       member: 14545439,
       userName: "费玉清",
       sex: '男',
       phoneNum: '13578906755',
-      consumption: 180
+      consumption: 180,
+      integral: 18
     },
     {
       member: 14545433,
       userName: "JJ林",
       sex: '男',
       phoneNum: '13578906755',
-      consumption: 120
+      consumption: 120,
+      integral: 12
     },
     {
       member: 14545435,
       userName: "周杰伦",
       sex: '男',
       phoneNum: '13578906755',
-      consumption: 140
+      consumption: 140,
+      integral: 14
     },
     {
       member: 14545437,
       userName: "王杰",
       sex: '男',
       phoneNum: '13578906755',
-      consumption: 160
+      consumption: 160,
+      integral: 16
     },
     {
       member: 14545439,
       userName: "费玉清",
       sex: '男',
       phoneNum: '13578906755',
-      consumption: 1280
+      consumption: 1280,
+      integral: 128
     },
     {
       member: 14545433,
       userName: "JJ林",
       sex: '男',
       phoneNum: '13578906755',
-      consumption: 1200
+      consumption: 1200,
+      integral: 120
     },
     {
       member: 14545435,
       userName: "周杰伦",
       sex: '男',
       phoneNum: '13578906755',
-      consumption: 180
+      consumption: 180,
+      integral: 18
     },
     {
       member: 14545437,
       userName: "王杰",
       sex: '男',
       phoneNum: '13578906755',
-      consumption: 260
+      consumption: 260,
+      integral: 26
     },
     {
       member: 14545439,
       userName: "费玉清",
       sex: '男',
       phoneNum: '13578906755',
-      consumption: 1780
+      consumption: 1780,
+      integral: 178
     },
     {
       member: 14545433,
       userName: "JJ林",
       sex: '男',
       phoneNum: '13578906755',
-      consumption: 1240
+      consumption: 1240,
+      integral: 124
     },
     {
       member: 14545435,
       userName: "周杰伦",
       sex: '男',
       phoneNum: '13578906755',
-      consumption: 1400
+      consumption: 1400,
+      integral: 140
     },
     {
       member: 14545437,
       userName: "王杰",
       sex: '男',
       phoneNum: '13578906755',
-      consumption: 1240
+      consumption: 1240,
+      integral: 124
     },
     {
       member: 14545439,
       userName: "费玉清",
       sex: '男',
       phoneNum: '13578906755',
-      consumption: 1240
+      consumption: 1240,
+      integral: 124
     }
   ];
 
@@ -169,7 +189,8 @@ $(function() {
       "<td>" + getData[i].userName + "</td>" +
       "<td>" + getData[i].sex + "</td>" +
       "<td>" + getData[i].phoneNum + "</td>" +
-      "<td>" + getData[i].consumption + "</td></tr>";
+      "<td>" + getData[i].consumption + "</td>" +
+      "<td>" + getData[i].integral + "</td></tr>";
   }
 
   $(".dataTables-example").append(tbodyHtml);
